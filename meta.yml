@@ -1,0 +1,9 @@
+name: challenge_gyctf_2020_web_babyphp
+title: 新春战"疫"网络安全公益赛 2020 Web BabyPHP
+desc: 新春战"疫"网络安全公益赛 2020 Web BabyPHP
+remark: 源码审计 www.zip
+tags:
+  - web
+  - php
+  - unserialize
+  - sqli
