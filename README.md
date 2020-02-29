@@ -1,51 +1,19 @@
 # 新春战"疫"网络安全公益赛 2020 Web BabyPHP
 
-- L: Linux alpine
-- N: Nginx
-- M: MySQL - Mariadb
-- P: PHP 5.6
-- PHP MySQL Ext
-    + mysql
-    + mysqli
+Build with [ctfhub/base_web_nginx_mysql_php_56](https://hub.docker.com/r/ctfhub/base_web_nginx_mysql_php_56)
 
-## Usage
+## 考点
 
-### ENV
+- 代码审计
+- unserialize
 
-- FLAG=ctfhub{nginx_mysql_php_56}
+## 启动
 
-You should rewrite flag.sh when you use this image.
-The `$FLAG` is not mandatory, but i hope you use it!
+    docker-compose up -d
+    open http://127.0.0.1:8085/
 
-### Files
+## 版权
 
-- src 网站源码
-    + db.sql **The file can aotu import to database!**
-    + index.php
-    + ...etc
-- Dockerfile
-- docker-compose.yml
+该题目复现环境尚未取得主办方及出题人相关授权，如果侵权，请联系我们删除（services#ctfhub.com）
 
-#### db.sql
-
-You should create database and user!
-
-```sql
-DROP DATABASE IF EXISTS `ctfhub`;
-CREATE DATABASE ctfhub;
-GRANT SELECT,INSERT,UPDATE,DELETE on ctfhub.* to ctfhub@'127.0.0.1' identified by 'ctfhub';
-GRANT SELECT,INSERT,UPDATE,DELETE on ctfhub.* to ctfhub@localhost identified by 'ctfhub';
-use ctfhub;
-
--- create table...
-```
-
-### Dockerfile
-
-```
-FROM ctfhub/base_web_nginx_mysql_php_56
-
-COPY src /var/www/html
-COPY _files/flag.sh /flag.sh
-```
-
+This challenge has not obtained relevant authorization from the organizer and the author. If it is infringing, please contact us to delete (services#ctfhub.com)
